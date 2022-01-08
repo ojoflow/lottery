@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
 contract Lottery {
@@ -23,6 +24,7 @@ contract Lottery {
                 
                 uint index = random() % players.length;
                 payable(players[index]).transfer(address(this).balance);
+                //lastWinner = players[index];
                 players = new address[](0); //initialize dynamic array with length zero
         }
 
